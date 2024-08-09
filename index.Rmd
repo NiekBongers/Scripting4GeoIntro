@@ -29,20 +29,10 @@ code[class^="sourceCode bash"]::before { content: "Bash Source"; }
 # Intro to functions and refresher on R
 
 ## Learning objectives
-* Install packages and create directories in R
 * Learn to write a function
 * Know how to visualize data via a spatial map using an R script
-* Adopt some good scripting/programming habits
 * Use control flow for efficient function writing
 
-# *RStudio* setup {#gettingstarted}
-For this course you can use *RStudio* to write and run scripts. You can access it from e.g. *Applications* → *Programming* → *RStudio* menu. In case you are working on your own computer and would like to know how to install *R* and *RStudio*, see the [RStudio website](https://www.rstudio.com/products/rstudio/download/).
-
-If you are new to *RStudio* take a look at the following summary YouTube video about how to use RStudio: [Intro to RStudio (6 min)](https://www.youtube.com/watch?v=FIrsOBy5k58). In it you will learn how to navigate the RStudio environment and even run some code. This will be helpful for later in the course.
-
-Additionally, the first time you open *RStudio* it's helpful to change some global settings. To do this go to *Tools* → *Global Options...* in the top menu bar of *RStudio*. The following box should appear. Set the settings to match that of the screenshot, namely, *Never save the workspace to .RData file on exit* and uncheck the boxes under *History*.
-
-![Global Options](figs/global_options.png)
 
 # Basic *R* knowledge useful for Geo-Scripting
 Scripting with *R* to handle spatial problems requires a core set of basic *R* skills. To prepare you well for the coming weeks, we've summarized what we think are important skills for geoscripting below.
@@ -307,17 +297,10 @@ Finally, you can now remove the objects you have created to make room for the ne
 rm(a, newfunc, a2b)
 ```
 
-# Good scripting/programming habits
+# Good scripting/programming habits in R
 
-Increasing your scripting/programming efficiency goes through adopting good scripting habits. Following a couple of guidelines will ensure that your work:
-
-* Can be understood and used by others.
-* Can be understood and reused by you in the future.
-* Can be debugged with minimal effort.
-* Can be re-used across different projects.
-* Is easily accessible by others.
-
-In order to achieve these objectives, you should try to follow a few good practices. The list below is not exhaustive, but already constitutes a good basis that will help you getting more efficient now and in the future when working on R projects.
+In previous tutorials we have gone over good programming habits in R and Python.
+Here's a refresher, with some additional points specific to R:
 
 * Comment your code.
 * Write [functions](#Function_writing) for code you need more than once:
@@ -328,9 +311,6 @@ In order to achieve these objectives, you should try to follow a few good practi
     - Indentation (like in Python: use spaces or tab to indent code in functions or loops etc.).
     - Consistent use of the assignment operator: either `<-` or `=` in all your code. The former is used by core R and allows assigning in function calls, the latter is shorter and consistent with most other programming languages.
     - Consistent placement of curly braces.
-* [Make your own packages](#__optional__Writing_packages_). 
-* Keep a similar [directory structure](../RProjectManagement/index.html) across your projects. 
-* Use [version control](../RProjectManagement/index.html#version-control) to develop/maintain your projects and packages.
 * Never place `rm(list = ls())` anywhere in your script. If you do so, you may [find your computer set on fire](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/).
 * Set your working directory relative to where you saved your R script: go to *Session* in the RStudio menu bar → *Set Working Directory* → *To Source File Location*
 
@@ -354,7 +334,7 @@ Then you can for example read in the file using:
     mytable <- read.csv(datafile) # Do something with that file name
 ```
 
-Note that R IDEs like RStudio make a lot of these good practices a lot easier and you should try to take maximum advantage of them. Take a moment to explore the menus of the RStudio session that should already be open on your machine.
+Note that R IDEs like RStudio make a lot of these good practices a lot easier and you should try to take maximum advantage of them.
 
 Below is an example of a function written with good practices and without.
 First the good example:
@@ -754,11 +734,6 @@ foo(2)
 ```
 
 Refer to the reference section of this document for further information on function debugging.
-
-```{block, type="alert alert-info"}
-# (optional) Writing packages
-The next step to write re-usable code is packaging it, so others can simply install and use it. If you followed the steps to here, this step is not very big anymore! For this course, it is optional. Find instructions [here](https://r-pkgs.org/introduction.html) and in the [references](#References_and_more_info) below.
-```
 
 # Creating a map within *R* - a simple demo
 
