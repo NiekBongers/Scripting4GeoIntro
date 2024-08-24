@@ -711,8 +711,8 @@ foo(2)
 
 Depending on the IDE you are using, you may be presented with tools for stepping through the function line by line, as well as a Browse console, which allows you to query the state of the variables involved so that you can identify exactly what is going on in the function call. For instance, in RKWard, the *Debugging Frames* pane on the right shows which line you are stepping through.
 
-# This link requires username and password. Maybe nice to replace with something else.
-#For another example see: [rfunction.com](http://rfunction.com/archives/2562).
+<!-- # This link requires username and password. Maybe nice to replace with something else. -->
+<!-- #For another example see: [rfunction.com](http://rfunction.com/archives/2562). -->
 
 #### RStudio
 RStudio has integration with the debugging tools in R, so you can use a point-and-click interface. However, some parts of it are specific to the RStudio IDE.
