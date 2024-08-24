@@ -7,7 +7,7 @@
 
         <meta name="author" content="Jan Verbesselt, Loïc Dutrieux and Dainius Masiliūnas" />
     
-        <meta name="date" content="2024-08-09" />
+        <meta name="date" content="2024-08-24" />
     
     <title>Intro to functions and refresher on R</title>
 
@@ -905,7 +905,7 @@ margin-left: 0 !important;
       <!-- html_clean authors -->
          <h4 class="author"><em>Jan Verbesselt, Loïc Dutrieux and
 Dainius Masiliūnas</em></h4>
-            <h4 class="date"><em>2024-08-09</em></h4>
+            <h4 class="date"><em>2024-08-24</em></h4>
       
       
    
@@ -974,9 +974,9 @@ elements click <a href="https://geoscripting-wur.github.io/RPythonBasics/">here<
 <h2>Package installation and creating new directories</h2>
 <p>To code efficiently, we use packages that contain ready-made features
 for specific applications. The relevant packages must first be installed
-before using their features. In this tutorial, we will be using the
-<em>terra</em> and <em>sf</em> packages. We can therefore go ahead and
-install them now.</p>
+before being able to use their features. In this tutorial, we will be
+using the <em>terra</em> and <em>sf</em> packages. We can therefore go
+ahead and install them now.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Check for the terra and sf packages and install if missing</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="st">&quot;terra&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()){<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>)}</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="st">&quot;sf&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()){<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)}</span></code></pre></div>
@@ -1057,8 +1057,9 @@ multiplication, <em>not</em> mathematical matrix multiplication.</p>
 <div class="alert alert-success">
 <blockquote>
 <p>
-<strong>Question 1:</strong> How do I replace values in <code>b</code>
-by 3 at which <code>a</code> is 6, 9 and 12?
+<strong>Question 1:</strong> How can you replace the values in b with 3
+at the positions where the corresponding values in a are either 6, 9, or
+12?
 </p>
 </blockquote>
 </div>
@@ -1110,7 +1111,7 @@ working directory.
 <h3>Example of <code>paste()</code> and <code>paste0()</code></h3>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Two handy examples</span></span>
 <span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;Today is&quot;</span>, <span class="fu">date</span>())</span></code></pre></div>
-<pre><code>## [1] &quot;Today is Fri Aug  9 15:09:28 2024&quot;</code></pre>
+<pre><code>## [1] &quot;Today is Sat Aug 24 10:08:21 2024&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&quot;A&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;A1&quot; &quot;A2&quot; &quot;A3&quot; &quot;A4&quot; &quot;A5&quot; &quot;A6&quot;</code></pre>
 <div class="alert alert-success">
@@ -1144,8 +1145,8 @@ working directory.
 <div class="alert alert-success">
 <blockquote>
 <p>
-<strong>Question 4</strong>: How do we select friday from the
-<code>name</code> variable?
+<strong>Question 4</strong>: How do we select <code>friday</code> from
+the <code>name</code> variable?
 </p>
 </blockquote>
 </div>
@@ -1265,10 +1266,10 @@ and Python. Here’s a refresher, with some additional points specific to
 R:</p>
 <ul>
 <li>Comment your code.</li>
-<li>Write <a href="#Function_writing">functions</a> for code you need
+<li>Write <a href="#function_writing">functions</a> for code you need
 more than once:
 <ul>
-<li>Make your functions generic and flexible, using <a href="#Control_flow">control flow</a>.</li>
+<li>Make your functions generic and flexible, using <a href="#control_flow">control flow</a>.</li>
 <li>Document your functions.</li>
 </ul></li>
 <li>Follow a R <a href="http://adv-r.had.co.nz/Style.html">style
@@ -1309,12 +1310,11 @@ setwd(“../some/path/outside/your/repository”)
 </div>
 <div class="alert alert-info">
 <p>
-<strong>Protip</strong>: You can use relative paths to load your data.
-For example by setting the path to a file “my-table.csv” in the
-directory “data”, relative to your script file: datafile &lt;-
-file.path(“data”, “my-table.csv”) Then you can for example read in the
-file using: mytable &lt;- read.csv(datafile) # Do something with that
-file name
+<strong>Tip</strong>: You can use relative paths to load your data. For
+example by setting the path to a file “my-table.csv” in the directory
+“data”, relative to your script file: datafile &lt;- file.path(“data”,
+“my-table.csv”) Then you can for example read in the file using: mytable
+&lt;- read.csv(datafile) # Do something with that file name
 </p>
 </div>
 <p>Note that R IDEs like RStudio make a lot of these good practices a
@@ -1389,9 +1389,9 @@ programs wherever that particular task should be performed. -<a href="https://en
 <p>The objective of this section is to provide some help on effective
 function writing. That is functions that are:</p>
 <ul>
-<li>simple,</li>
-<li>generic, and</li>
-<li>flexible.</li>
+<li>simple</li>
+<li>generic</li>
+<li>flexible</li>
 </ul>
 <p>They should integrate well in a processing/analysis chain and be
 easily be re-used in a slightly different chain if needed. More
@@ -1406,11 +1406,11 @@ or class. Make use of that in your code, as this will make your
 functions more flexible and generic.</p>
 <div id="object-classes-and-control-flow" class="section level3">
 <h3>Object classes and Control flow</h3>
-<p>You have seen in a <a href="../RPythonBasics/index.html/#data-types">previous tutorial</a>
-already that every variable in your <em>R</em> working environment
-belongs to a class. You can take advantage of that, using control flow,
-to make your functions more flexible. First, let’s introduce a new
-class.</p>
+<p>You have seen in a <a href="https://geoscripting-wur.github.io/RPythonBasics/#data-types">previous
+tutorial</a> already that every variable in your <em>R</em> working
+environment belongs to a class. You can take advantage of that, using
+control flow, to make your functions more flexible. First, let’s
+introduce a new class.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="co"># Check for the terra package and install if missing</span></span>
 <span id="cb60-2"><a href="#cb60-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="st">&quot;terra&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()){<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>)}</span>
 <span id="cb60-3"><a href="#cb60-3" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
@@ -1683,7 +1683,7 @@ calculating frequency on a list of auto-generated SpatRasters.</p>
 <span id="cb110-7"><a href="#cb110-7" tabindex="-1"></a><span class="co"># The freq() function returns the frequency of a certain value in a SpatRaster</span></span>
 <span id="cb110-8"><a href="#cb110-8" tabindex="-1"></a><span class="co"># We want to know how many times the value -2 is present in the SpatRaster</span></span>
 <span id="cb110-9"><a href="#cb110-9" tabindex="-1"></a><span class="fu">freq</span>(a, <span class="at">value =</span> <span class="sc">-</span><span class="dv">2</span>)<span class="sc">$</span>count</span></code></pre></div>
-<pre><code>## [1] 353</code></pre>
+<pre><code>## [1] 360</code></pre>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" tabindex="-1"></a><span class="co"># Let&#39;s imagine that you want to run this function over a whole list of SpatRaster</span></span>
 <span id="cb112-2"><a href="#cb112-2" tabindex="-1"></a><span class="co"># but some elements of the list are impredictibly corrupted, so the list looks as follows</span></span>
 <span id="cb112-3"><a href="#cb112-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> a</span>
@@ -1705,10 +1705,10 @@ calculating frequency on a list of auto-generated SpatRasters.</p>
 <pre><code>## Error : unable to find an inherited method for function &#39;freq&#39; for signature &#39;x = &quot;logical&quot;&#39;</code></pre>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" tabindex="-1"></a>out</span></code></pre></div>
 <pre><code>## [[1]]
-## [1] 353
+## [1] 360
 ## 
 ## [[2]]
-## [1] 353
+## [1] 360
 ## 
 ## [[3]]
 ## [1] &quot;Error : unable to find an inherited method for function &#39;freq&#39; for signature &#39;x = \&quot;logical\&quot;&#39;\n&quot;</code></pre>
@@ -1730,17 +1730,17 @@ calculating frequency on a list of auto-generated SpatRasters.</p>
 <span id="cb119-16"><a href="#cb119-16" tabindex="-1"></a>}</span>
 <span id="cb119-17"><a href="#cb119-17" tabindex="-1"></a>out</span></code></pre></div>
 <pre><code>## [[1]]
-## [1] 353
+## [1] 360
 ## 
 ## [[2]]
-## [1] 353
+## [1] 360
 ## 
 ## [[3]]
 ## [1] &quot;This object returned an error&quot;</code></pre>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" tabindex="-1"></a><span class="co"># Note that using a function of the apply family would be a more</span></span>
 <span id="cb121-2"><a href="#cb121-2" tabindex="-1"></a><span class="co"># elegant/shorter way to obtain the same result</span></span>
 <span id="cb121-3"><a href="#cb121-3" tabindex="-1"></a>(out <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="at">X =</span> rasterList, <span class="at">FUN =</span> fun, <span class="at">value =</span> <span class="sc">-</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;353&quot;                           &quot;353&quot;                          
+<pre><code>## [1] &quot;360&quot;                           &quot;360&quot;                          
 ## [3] &quot;This object returned an error&quot;</code></pre>
 </div>
 <div id="function-debugging" class="section level3">
@@ -1791,8 +1791,14 @@ console, which allows you to query the state of the variables involved
 so that you can identify exactly what is going on in the function call.
 For instance, in RKWard, the <em>Debugging Frames</em> pane on the right
 shows which line you are stepping through.</p>
-<p>For another example see: <a href="http://rfunction.com/archives/2562">rfunction.com</a>.</p>
 </div>
+</div>
+</div>
+</div>
+<div id="this-link-requires-username-and-password.-maybe-nice-to-replace-with-something-else." class="section level1">
+<h1>This link requires username and password. Maybe nice to replace with
+something else.</h1>
+<p>#For another example see: <a href="http://rfunction.com/archives/2562">rfunction.com</a>.</p>
 <div id="rstudio" class="section level4">
 <h4>RStudio</h4>
 <p>RStudio has integration with the debugging tools in R, so you can use
@@ -1822,8 +1828,6 @@ or “rerun the code with debugging” with two buttons in the console.</li>
 <span id="cb124-7"><a href="#cb124-7" tabindex="-1"></a><span class="do">## [1] 7</span></span></code></pre></div>
 <p>Refer to the reference section of this document for further
 information on function debugging.</p>
-</div>
-</div>
 </div>
 </div>
 <div id="creating-a-map-within-r---a-simple-demo" class="section level1">
@@ -2001,6 +2005,9 @@ One central object class of R is the dataframes. The spatial vector classes of R
        <li><a href="#try-and-debugging" id="toc-try-and-debugging"><code>try()</code> and
        debugging</a></li>
        </ul></li>
+       <li><a href="#this-link-requires-username-and-password.-maybe-nice-to-replace-with-something-else." id="toc-this-link-requires-username-and-password.-maybe-nice-to-replace-with-something-else.">This
+       link requires username and password. Maybe nice to replace with
+       something else.</a></li>
        <li><a href="#creating-a-map-within-r---a-simple-demo" id="toc-creating-a-map-within-r---a-simple-demo">Creating a map
        within <em>R</em> - a simple demo</a></li>
        <li><a href="#references-and-more-info" id="toc-references-and-more-info">References and more

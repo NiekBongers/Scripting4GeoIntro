@@ -42,7 +42,7 @@ Scripting with *R* to handle spatial problems requires a core set of basic *R* s
 ```
 
 ## Package installation and creating new directories 
-To code efficiently, we use packages that contain ready-made features for specific applications. The relevant packages must first be installed before using their features. In this tutorial, we will be using the *terra* and *sf* packages. We can therefore go ahead and install them now. 
+To code efficiently, we use packages that contain ready-made features for specific applications. The relevant packages must first be installed before being able to use their features. In this tutorial, we will be using the *terra* and *sf* packages. We can therefore go ahead and install them now. 
 
 ```{r}
 # Check for the terra and sf packages and install if missing
@@ -122,7 +122,7 @@ a
 ```
 
 ```{block, type="alert alert-success"}
-> **Question 1:** How do I replace values in `b` by 3 at which `a` is 6, 9 and 12?
+> **Question 1:** How can you replace the values in b with 3 at the positions where the corresponding values in a are either 6, 9, or 12?
 ```
 
 ## Character vector handling
@@ -198,7 +198,7 @@ class(date)
 ```
 
 ```{block, type="alert alert-success"}
-> **Question 4**: How do we select friday from the `name` variable?
+> **Question 4**: How do we select `friday` from the `name` variable?
 ```
 
 ### Example of `switch()`
@@ -303,8 +303,8 @@ In previous tutorials we have gone over good programming habits in R and Python.
 Here's a refresher, with some additional points specific to R:
 
 * Comment your code.
-* Write [functions](#Function_writing) for code you need more than once:
-    - Make your functions generic and flexible, using [control flow](#Control_flow).
+* Write [functions](#function_writing) for code you need more than once:
+    - Make your functions generic and flexible, using [control flow](#control_flow).
     - Document your functions.
 * Follow a R [style guide](http://adv-r.had.co.nz/Style.html). This will make your code more readable! Most important are:
     - Meaningful and consistent naming of files, functions, variables...
@@ -326,7 +326,7 @@ Here's a refresher, with some additional points specific to R:
 
 
 ```{block type="alert alert-info"}
-**Protip**: You can use relative paths to load your data. 
+**Tip**: You can use relative paths to load your data. 
 For example by setting the path to a 
 file "my-table.csv" in the directory "data", relative to your script file:
     datafile <- file.path("data", "my-table.csv")
@@ -400,9 +400,9 @@ You haven't fully understood what control flow is or you are not fully comfortab
 
 The objective of this section is to provide some help on effective function writing. That is functions that are:
 
-* simple,
-* generic, and
-* flexible.
+* simple
+* generic
+* flexible
 
 They should integrate well in a processing/analysis chain and be easily be re-used in a slightly different chain if needed.
 More flexibility in your function can be achieved through some easy control flow tricks. The following section develops this concept and provides examples.
@@ -411,7 +411,7 @@ More flexibility in your function can be achieved through some easy control flow
 Control flow refers to the use of conditions in your code that redirect the flow to different directions depending on variables values or class. Make use of that in your code, as this will make your functions more flexible and generic.
 
 ### Object classes and Control flow
-You have seen in a [previous tutorial](../RPythonBasics/index.html/#data-types) already that every variable in your *R* working environment belongs to a class. You can take advantage of that, using control flow, to make your functions more flexible. First, let's introduce a new class.
+You have seen in a [previous tutorial](https://geoscripting-wur.github.io/RPythonBasics/#data-types) already that every variable in your *R* working environment belongs to a class. You can take advantage of that, using control flow, to make your functions more flexible. First, let's introduce a new class.
 
 ```{r}
 # Check for the terra package and install if missing
@@ -602,6 +602,7 @@ sum(NewSubjects >= 2000)
 > **Question 8**: What happened, and what would happen if we didn't include the Roman numerals?
 ```
 
+
 `AddNewSubject` is not type consistent: depending on the input, the output class changes. This is sometimes convenient, but in the case above, the function succeeds but gives an output that is completely misleading. This has gone horribly right: a lot of code in R is flexible and can handle multiple input types, and so you may only notice that your output is wrong when you inspect it yourself. If the function `AddNewSubject` checked the input and always returned integers, we would be sure that comparing its output against numbers and summing them is safe. Similarly, the `is.numeric()` etc. functions are type consistent, and thus it is safe to use them in `if` statements which always require a logical input. This allows us to not need extra type checking after running such a function. In addition, the function name is hinting towards the type consistency: `is.` makes us realise that it will give a yes/no answer.
 
 ## `try()` and debugging
@@ -710,7 +711,8 @@ foo(2)
 
 Depending on the IDE you are using, you may be presented with tools for stepping through the function line by line, as well as a Browse console, which allows you to query the state of the variables involved so that you can identify exactly what is going on in the function call. For instance, in RKWard, the *Debugging Frames* pane on the right shows which line you are stepping through.
 
-For another example see: [rfunction.com](http://rfunction.com/archives/2562).
+# This link requires username and password. Maybe nice to replace with something else.
+#For another example see: [rfunction.com](http://rfunction.com/archives/2562).
 
 #### RStudio
 RStudio has integration with the debugging tools in R, so you can use a point-and-click interface. However, some parts of it are specific to the RStudio IDE.
